@@ -1,0 +1,25 @@
+{% extends "_base.html" %}
+
+{% block page_title %}
+Product List
+{% endblock page_title %}
+
+
+{% block content %}
+    <h1>Product List</h1>
+    <form action="" method='post'>
+        {% csrf_token %}
+        {% for product in products %}
+            <a href={{product.get_absolute_url}}>
+                {{product.title}}
+            </a>
+            <h6>
+                {{product.description}}
+                <br>
+                {{ product.price}}
+            </h6>
+            
+        {% endfor %}
+
+    </form>
+{% endblock content %}

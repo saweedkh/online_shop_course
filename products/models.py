@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 # Create your models here.
 
@@ -12,3 +13,12 @@ class Product(models.Model):
 
     datetime_dreated = models.DateTimeField(auto_now_add=True)
     datetime_modified = models.DateTimeField(auto_now=True)
+
+
+
+    def __str__(self) -> str:
+        return self.title 
+    
+    def get_absolute_url(self):
+        return reverse("product_detail", kwargs={"pk": self.pk})
+    
