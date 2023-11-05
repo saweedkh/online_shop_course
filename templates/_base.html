@@ -116,6 +116,19 @@
         </header>
         <!-- Header End -->
 
+        {% if messages %}
+            {% for message in messages %}
+                <li {% if message.tags %} class='alert alert-{{message.tags}}'{% endif %}>{{ message }}</li>
+                <div> {{ message }} </div>
+            {% endfor %}
+            
+            <ul class='messages'>
+                {% for message in messages %}
+                    <li {% if message.tags %} class='{{message.tags}}'{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
 
 
         {% comment %} {% if user.is_authenticated %}
