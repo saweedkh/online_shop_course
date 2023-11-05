@@ -90,6 +90,9 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+
+                # Custom Context processor
+                'cart.context_processors.cart'
             ],
         },
     },
@@ -209,5 +212,5 @@ ACCOUNT_UNIQUE_EMAIL = True
 from django.contrib.messages import constants as messages_contants
 
 MESSAGES_TAGS = {
-    messages_contants.ERROR : 'danger',
+    messages_contants.ERROR : 'alert-danger',
 }
