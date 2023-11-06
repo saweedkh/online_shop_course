@@ -7,7 +7,7 @@ from .models import Product, Comment
 
 class CommentsInline(admin.TabularInline):
     model = Comment
-    fields = ( 'author', 'body', 'stars', 'active', )
+    fields = ( 'author', 'body', 'stars', 'active',)
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
