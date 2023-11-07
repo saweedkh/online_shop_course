@@ -49,7 +49,7 @@ Cart Detail
                                                     </td>
                                                     <td class="product-price">
                                                         <span class="product-price-wrapper">
-                                                            <span class="money">{{ item.product_obj.price}} {% trans "$" %}</span>
+                                                            <span class="money">{{ item.product_obj.price|intcomma:False|translate_number}} {% trans "$" %}</span>
                                                         </span>
                                                     </td>
                                                     <td class="product-quantity">
@@ -64,7 +64,7 @@ Cart Detail
                                                     </td>
                                                     <td class="product-total-price">
                                                         <span class="product-price-wrapper">
-                                                            <span class="money">{{ item.total_price }} {% trans "$" %}</span>
+                                                            <span class="money">{{ item.total_price|intcomma:False|translate_number }} {% trans "$" %}</span>
                                                         </span>
                                                     </td>
                                                 </tr>
